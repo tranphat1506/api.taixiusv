@@ -40,14 +40,14 @@ async function signIn(req,res){
                         await res.cookie('a_token', arrayToken[0].encoded, {
                             maxAge : 3600000, //milli secs
                             sameSite: 'lax',
-                            domain : "localhost",
+                            domain : "localhost:10000",
                             httpOnly : true,
                             secure : true
                         })
                         await res.cookie('r_token', arrayToken[1].encoded, {
                             maxAge : 3153600000, //millisecs
                             sameSite: 'lax',
-                            domain : "localhost",
+                            domain : "localhost:10000",
                             httpOnly : true,
                             secure : true
                         })
