@@ -41,13 +41,13 @@ async function signIn(req,res){
                             maxAge : 3600000, //milli secs
                             sameSite: 'lax',
                             httpOnly : true,
-                            secure : true
+                            //secure : true
                         })
                         await res.cookie('r_token', arrayToken[1].encoded, {
                             maxAge : 3153600000, //millisecs
                             sameSite: 'lax',
                             httpOnly : true,
-                            secure : true
+                            //secure : true
                         })
                         return res.sendStatus(200); 
                     })

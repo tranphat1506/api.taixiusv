@@ -52,13 +52,13 @@ async function verifyToken(req, res, next) {
                         maxAge : 3600000, //millisecs
                         sameSite: 'lax',
                         httpOnly : true,
-                        secure : true
+                        //secure : true
                     })
                     res.cookie('r_token', arrayToken[1].encoded, {
                         maxAge : 31536000000, //millisecs
                         sameSite: 'lax',
                         httpOnly : true,
-                        secure : true
+                        //secure : true
                     })
                     return next();
                 })
