@@ -28,7 +28,7 @@ const helmet = require('helmet')
 router.use((req,res, next)=>{
     // prevent CORS send pre-flight
     if (req.method == "OPTIONS"){
-        return res.sendStatus(204)
+        return res.sendStatus(200)
     }
     return next();
 })
