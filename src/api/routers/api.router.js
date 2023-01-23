@@ -30,7 +30,7 @@ const authMiddleware = require('../middlewares/auth.middleware')
 router.use((req,res, next)=>{
     // prevent CORS send pre-flight
     if (req.method == "OPTIONS"){
-        return res.sendStatus(200)
+        return res.sendStatus(204)
     }
     return next();
 })

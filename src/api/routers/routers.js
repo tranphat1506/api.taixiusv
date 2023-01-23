@@ -17,7 +17,7 @@ router.use(bodyParser.json());
 
 const cors = require('cors')
 var allowCrossDomain = function(req, res, next) {
-    res.header('Access-Control-Allow-Origin', 'http://127.0.0.1');
+    res.header('Access-Control-Allow-Origin', 'http://localhost');
     res.header('Access-Control-Allow-Credentials', true);
     res.header('Access-Control-Allow-Methods', 'POST, GET, DELETE, OPTIONS');
     res.header("Access-Control-Allow-Headers", "X-Requested-With, Content-Type, Accept");

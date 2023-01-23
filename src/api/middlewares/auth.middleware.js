@@ -20,13 +20,13 @@ async function verifyToken(req, res, next) {
                 .then(async arrayToken=>{
                     res.cookie('a_token', arrayToken[0].encoded, {
                         maxAge : 3600000, //millisecs
-                        domain : '127.0.0.1',
+                        domain : 'localhost',
                         sameSite: 'lax',
                         httpOnly : true
                     })
                     res.cookie('r_token', arrayToken[1].encoded, {
                         maxAge : 31536000000, //millisecs
-                        domain : '127.0.0.1',
+                        domain : 'localhost',
                         sameSite: 'lax',
                         httpOnly : true
                     })
@@ -50,13 +50,13 @@ async function verifyToken(req, res, next) {
                 .then(async arrayToken=>{
                     res.cookie('a_token', arrayToken[0].encoded, {
                         maxAge : 3600000, //millisecs
-                        domain : '127.0.0.1',
+                        domain : 'localhost',
                         sameSite: 'lax',
                         httpOnly : true
                     })
                     res.cookie('r_token', arrayToken[1].encoded, {
                         maxAge : 31536000000, //millisecs
-                        domain : '127.0.0.1',
+                        domain : 'localhost',
                         sameSite: 'lax',
                         httpOnly : true
                     })
