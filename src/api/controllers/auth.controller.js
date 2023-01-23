@@ -40,13 +40,13 @@ async function signIn(req,res){
                     .then(async arrayToken=>{
                         await res.cookie('a_token', arrayToken[0].encoded, {
                             maxAge : 3600000, //milli secs
-                            sameSite: 'lax',
+                            sameSite: 'strict',
                             httpOnly : true,
                             secure : true
                         })
                         await res.cookie('r_token', arrayToken[1].encoded, {
                             maxAge : 3153600000, //millisecs
-                            sameSite: 'lax',
+                            sameSite: 'strict',
                             httpOnly : true,
                             secure : true
                         })
