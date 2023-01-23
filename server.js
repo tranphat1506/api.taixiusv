@@ -29,6 +29,7 @@ const DB = require('./src/api/config/db.config');
 
 const taiXiuServices = require('./src/api/services/taixiu');
 server.listen(PORT, () => {
+    console.log(server.address());
     debug(`API SERVER RUN ON PORT ${PORT}`)
     taiXiuServices.startCounter(65);
 });
