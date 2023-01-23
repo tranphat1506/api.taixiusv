@@ -42,14 +42,14 @@ async function signIn(req,res){
                             domain : 'localhost',
                             sameSite: 'lax',
                             httpOnly : true,
-                            //secure : true
+                            secure : true
                         })
                         await res.cookie('r_token', arrayToken[1].encoded, {
                             maxAge : 3153600000, //millisecs
                             domain : 'localhost',
                             sameSite: 'lax',
                             httpOnly : true,
-                            //secure : true
+                            secure : true
                         })
                         return res.sendStatus(200); 
                     })
