@@ -51,7 +51,7 @@ async function verifyToken(req, res, next) {
                     res.cookie('a_token', arrayToken[0].encoded, {
                         maxAge : 3600000, //millisecs
                         sameSite: 'Lax',
-                        domain : "https://api-taixiusv.onrender.com",
+                        domain : "localhost",
                         path : "/api",
                         httpOnly : true,
                         secure : true
@@ -59,7 +59,7 @@ async function verifyToken(req, res, next) {
                     res.cookie('r_token', arrayToken[1].encoded, {
                         maxAge : 31536000000, //millisecs
                         sameSite: 'Lax',
-                        domain : "https://api-taixiusv.onrender.com",
+                        domain : "localhost",
                         path : "/api",
                         httpOnly : true,
                         secure : true
