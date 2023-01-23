@@ -21,13 +21,13 @@ async function verifyToken(req, res, next) {
                     res.cookie('a_token', arrayToken[0].encoded, {
                         maxAge : 3600000, //millisecs
                         domain : 'localhost',
-                        sameSite: 'strict',
+                        sameSite: 'lax',
                         httpOnly : true
                     })
                     res.cookie('r_token', arrayToken[1].encoded, {
                         maxAge : 31536000000, //millisecs
                         domain : 'localhost',
-                        sameSite: 'strict',
+                        sameSite: 'lax',
                         httpOnly : true
                     })
                     return next();
@@ -51,16 +51,16 @@ async function verifyToken(req, res, next) {
                     res.cookie('a_token', arrayToken[0].encoded, {
                         maxAge : 3600000, //millisecs
                         domain : 'localhost',
-                        sameSite: 'strict',
+                        sameSite: 'lax',
                         httpOnly : true,
-                        secure : true
+                        //secure : true
                     })
                     res.cookie('r_token', arrayToken[1].encoded, {
                         maxAge : 31536000000, //millisecs
                         domain : 'localhost',
-                        sameSite: 'strict',
+                        sameSite: 'lax',
                         httpOnly : true,
-                        secure : true
+                        //secure : true
                     })
                     return next();
                 })
