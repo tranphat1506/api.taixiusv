@@ -16,6 +16,13 @@ router.use(bodyParser.urlencoded({extended: false}));
 router.use(bodyParser.json());
 
 const cors = require('cors')
+router.use((req,res, next)=>{
+    // prevent CORS send pre-flight
+    if (req.method == "OPTIONS"){
+        return res.sendStatus(200)
+    }
+    return next();
+})
 var allowCrossDomain = function(req, res, next) {
     res.header('Access-Control-Allow-Origin', 'http://localhost:3000');
     res.header('Access-Control-Allow-Credentials', true);
@@ -25,21 +32,14 @@ var allowCrossDomain = function(req, res, next) {
 };
 
 const helmet = require('helmet')
-/* router.use((req,res, next)=>{
-    // prevent CORS send pre-flight
-    if (req.method == "OPTIONS"){
-        return res.sendStatus(200)
-    }
-    return next();
-}) */
 router.use(helmet())
-const corsOptions ={
+/* const corsOptions ={
     origin:'*', 
     credentials:true,            //access-control-allow-credentials:true
     optionSuccessStatus:200,
     allowCrossDomain : true
- }
-router.use(cors(corsOptions))
+ } */
+router.use(allowCrossDomain)
 var cookieParser = require('cookie-parser')
 router.use(cookieParser())
 
