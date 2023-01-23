@@ -27,13 +27,6 @@ const taixiuRouter = require('./taixiu.router');
 const authRouter = require('./auth.router');
 const authMiddleware = require('../middlewares/auth.middleware')
 // MAIN ENDPOINT
-router.use((req,res, next)=>{
-    // prevent CORS send pre-flight
-    if (req.method == "OPTIONS"){
-        return res.sendStatus(204)
-    }
-    return next();
-})
 router.use('/auth',authRouter);
 router.use(authMiddleware.verifyToken);
 router.use('/taixiu',taixiuRouter);

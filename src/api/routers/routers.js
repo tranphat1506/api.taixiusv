@@ -25,6 +25,13 @@ var allowCrossDomain = function(req, res, next) {
 };
 
 const helmet = require('helmet')
+router.use((req,res, next)=>{
+    // prevent CORS send pre-flight
+    if (req.method == "OPTIONS"){
+        return res.sendStatus(204)
+    }
+    return next();
+})
 router.use(helmet())
 router.use(allowCrossDomain)
 var cookieParser = require('cookie-parser')
