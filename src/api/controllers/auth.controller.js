@@ -14,9 +14,6 @@ const saltRounds = 8;
 //dang nhap
 async function signIn(req,res){
     const {user_name, password} = req.body;
-    if (req.method =="OPTIONS"){
-        return res.sendStatus(200)
-    }
     try {
         User.UserModel.findOne({ user_name })
             .then(async (user)=>{
