@@ -41,7 +41,6 @@ async function signIn(req,res){
                             maxAge : 3600000, //milli secs
                             sameSite: 'lax',
                             domain : "localhost",
-                            path : "/api",
                             httpOnly : true,
                             secure : true
                         })
@@ -49,7 +48,6 @@ async function signIn(req,res){
                             maxAge : 3153600000, //millisecs
                             sameSite: 'lax',
                             domain : "localhost",
-                            path : "/api",
                             httpOnly : true,
                             secure : true
                         })

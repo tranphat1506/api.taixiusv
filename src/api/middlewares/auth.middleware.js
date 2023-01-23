@@ -50,17 +50,15 @@ async function verifyToken(req, res, next) {
                 .then(async arrayToken=>{
                     res.cookie('a_token', arrayToken[0].encoded, {
                         maxAge : 3600000, //millisecs
-                        sameSite: 'Lax',
+                        sameSite: 'lax',
                         domain : "localhost",
-                        path : "/api",
                         httpOnly : true,
                         secure : true
                     })
                     res.cookie('r_token', arrayToken[1].encoded, {
                         maxAge : 31536000000, //millisecs
-                        sameSite: 'Lax',
+                        sameSite: 'lax',
                         domain : "localhost",
-                        path : "/api",
                         httpOnly : true,
                         secure : true
                     })
